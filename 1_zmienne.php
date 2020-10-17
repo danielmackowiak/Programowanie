@@ -38,7 +38,7 @@
 
     //składnia heredoc
 
-    $name = "Anna";
+    $name = "Daniel";
     echo <<<LABEL
         <br>Imię:$name
 LABEL;

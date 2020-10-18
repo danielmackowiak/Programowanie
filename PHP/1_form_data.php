@@ -17,14 +17,27 @@
         echo '</pre>';
         */
 
-//Dodaj pole imię oraz pole kod pocztowy (składa się z dwóch pól, pierwsze ma rozmiar 2, drugie 3)
+// Dodaj pole imię oraz pole kod pocztowy (składa się z dwóch pól, pierwsze ma rozmiar 2, drugie 3)
+// isset()
+// operatory logiczne AND &&, OR ||
 
-        echo <<<T
-            Imię: $_GET[name]<br>
-            Nazwisko: $_GET[surname]<br>
-            Hasło: {$_GET['pass']}
-            Kod Pocztowy1: $_GET[zipcode]<br>
-    T;
+// Sprawdź czy użytkownik wypełnił wszystkie dane, jeśli tak to wyświetl mu heredoc, w przeciwnym razie przekieruj użytkownika do formularza
+
+        if (!empty($_GET['name']) && !empty(GET['surname']) && !empty(GET['zipcode']) && !empty(GET['zipcode2'])) {
+            echo 'Dane wprowadzone poprawnie';
+            echo <<<T
+            Imię i Nazwisko: $_GET[name] $_GET[surname]<br>
+            Hasło: {$_GET['pass']}<br>
+            Kod Pocztowy1: $_GET[zipcode]-$_GET[zipcode2]
+T;
+        }else {
+            echo 'Wypełnij wszystkie dane!';
+        }
+
+// po nie wypełnieniu danych, przekierowywuje użytkownika do formularza, dane w formularzu mają byc wypełnione (oprócz hasła)
+// wykorzystaj skrypt w js (historia)
+
+
 
 
     ?>

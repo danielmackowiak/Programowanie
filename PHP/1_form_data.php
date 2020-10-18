@@ -28,7 +28,7 @@
 
 // Wykorzystaj switch do wyświetlenia koloru np. czerwony
 
-        if (!empty($_GET['name']) && !empty($_GET['surname']) && !empty($_GET['pass'] && !empty($_GET['zipcode']) && !empty($_GET['zipcode2']) && !empty($_GET['color'])) {
+        if (!empty($_GET['name']) && !empty($_GET['surname']) && !empty($_GET['pass'] && !empty($_GET['zipcode']) && !empty($_GET['zipcode2']) && !empty($_GET['color']) &&($_GET['statute']=='on')){
             $color = $_GET['color']
             switch ($color) {
                 case 'r':
@@ -40,18 +40,19 @@
                     &color = 'niebieski'
                 break;
             break;
+        }
             echo <<<T
             Imię i Nazwisko: $_GET[name] $_GET[surname]<br>
             Hasło: {$_GET['pass']}<br>
             Kod Pocztowy: $_GET[zipcode]-$_GET[zipcode2]
             Ulubiony kolor: $color
             T;
-            }
+
+            echo "<a href=\""
         }else {
-           // header('location: ./1_form.php');
            ?>
            <script>
-                history.back();
+               // history.back();
            </script>
            <?php
         }

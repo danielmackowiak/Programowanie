@@ -17,15 +17,20 @@
     <title>Zadanie Domowe</title>
 </head>
 <body>
-    <form name="form1" action="./homework_1_data.php" method="get">
+    <form name="form1" action="./homework_1_data.php" method="post">
+
+        <label>Bok A:</label>
+        <input type="number" name="bok_A" size="2"><br>
+        <label>Bok B:</label>
+        <input type="number" name="bok_B" size="2"><br>
+
         <input type="radio" name="typ" value="p" checked>
-        <label>Pole:</label>
-        <input type="number" name="pole_liczba" size="1">
+        <label>Pole</label>
         <input type="radio" name="typ" value="o">
-        <label>Obwód:</label>
-        <input type="number" name="obwod_liczba" size="1">
+        <label>Obwód</label><br>
 
         <input type="submit" value="Pokaż wynik">
+
     </form>
 </body>
 </html>

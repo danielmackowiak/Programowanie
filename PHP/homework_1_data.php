@@ -7,29 +7,24 @@
 </head>
 <body>
     <?php
-        if (!empty($_GET['pole_liczba'])) {
-            echo <<<T
-                Pole wynosi: $_GET[pole_liczba]
-            T;
-        }else {
-            ?>
-            <script>
-                // history.back();
-            </script>
-            <?php
-        }
-        if (!empty($_GET['obwod_liczba'])) {
-            echo <<<T
-                Obwód: $_GET[obwod_liczba]
-            T;
-        }else {
-            ?>
-            <script>
-                // history.back();
-            </script>
-            <?php
-        }
+        $bokA = $_POST['bok_A'];
+        $bokB = $_POST['bok_B'];
+        $guzik = $_POST['typ'];
 
+        $pole = $bokA * $bokB;
+        $obwod = $bokA + $bokB;
+
+        if (!empty($_POST['bok_A'])&& !empty($_POST['bok_B'])&& $guzik == "p") {
+            echo "Pole wynosi: $pole cm<sup>2</sup>";
+        }elseif (!empty($_POST['bok_A'])&& !empty($_POST['bok_B'])&& $guzik == "o") {
+            echo "Obwód wynosi: $obwod cm";
+        }else {
+            ?>
+            <script>
+              history.back();
+            </script>
+            <?php
+        }
     ?>
 </body>
 </html>

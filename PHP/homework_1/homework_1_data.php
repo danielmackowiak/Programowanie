@@ -37,5 +37,8 @@
             <?php
         }
     ?>
+    <form name="form1" action="./homework_1_calc.php" method="post">
+        <input type="submit" value="Pokaż obliczenia">
+    </form>
 </body>
 </html>

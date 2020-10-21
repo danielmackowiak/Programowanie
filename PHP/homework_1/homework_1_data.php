@@ -9,6 +9,10 @@
 // Obliczenia mają być wyidoczne w innym pliku
 ?>
 
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +34,10 @@
         $bokA = $_POST['bok_A'];
         $bokB = $_POST['bok_B'];
         $guzik = $_POST['typ'];
+
+        $_SESSION['bokA'] = "$bokA";
+        $_SESSION['bokB'] = "$bokB";
+        $_SESSION['guzik'] = "$guzik";
 
         $pole = $bokA * $bokB;
         $obwod = $bokA + $bokB;

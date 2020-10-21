@@ -9,6 +9,10 @@
 // Obliczenia mają być wyidoczne w innym pliku
 ?>
 
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +21,21 @@
     <title>Obliczenia</title>
         <style>
             body {
-                padding: 100px; line-height: 35px; border: dotted 5px black; width: 20%; font: 200% Segoe UI;
+                padding: 90px; line-height: 35px; border: dotted 5px black; width: 20%; font: 200% Segoe UI; margin-left: auto; margin-right: auto; transform: translateY(80%);
             }
         </style>
 </head>
 <body>
+    <center>
     <?php
-        if (!empty($_POST['bok_A'])&& !empty($_POST['bok_B'])&& $guzik == "p") {
-            echo "Pole: $bokA x $bokB = $pole cm<sup>2</sup>";
-        }elseif (!empty($_POST['bok_A'])&& !empty($_POST['bok_B'])&& $guzik == "o") {
-            echo "Obwód: $bokA + $bokB = $obwod cm";
+
+        $pole = $_SESSION['bokA'] * $_SESSION['bokB'];
+        $obwod = $_SESSION['bokA'] + $_SESSION['bokB'];     
+
+        if (!empty($_SESSION['bokA'])&& !empty($_SESSION['bokB'])&& $_SESSION['guzik'] == "p") {
+            echo "Pole: $_SESSION[bokA] x $_SESSION[bokB] = $pole cm<sup>2</sup>";
+        }elseif (!empty($_SESSION['bokA'])&& !empty($_SESSION['bokB'])&& $_SESSION['guzik'] == "o") {
+            echo "Obwód: $_SESSION[bokA] + $_SESSION[bokB] = $obwod cm";
         }else {
             ?>
             <script>
@@ -35,5 +44,6 @@
             <?php
         }
     ?>
+    </center>
 </body>
 </html>

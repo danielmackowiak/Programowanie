@@ -9,6 +9,10 @@
 // Obliczenia mają być wyidoczne w innym pliku
 ?>
 
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

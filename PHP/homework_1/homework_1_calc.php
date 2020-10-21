@@ -21,7 +21,7 @@
     <title>Obliczenia</title>
         <style>
             body {
-                padding: 90px; line-height: 35px; border: groove 5px black; width: 30%; font: 200% Segoe UI; margin-left: auto; margin-right: auto; transform: translateY(93%); box-shadow: inset 0 0 0 15px lightblue;
+                padding: 90px; line-height: 35px; border: groove 4px black; width: 30%; font: 200% Segoe UI; margin-left: auto; margin-right: auto; transform: translateY(93%); box-shadow: inset 0 0 0 15px lightblue;
             }
         </style>
 </head>

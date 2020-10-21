@@ -21,7 +21,7 @@
     <title>Wynik</title>
         <style>
             body {
-                padding: 90px; line-height: 35px; border: dotted 5px black; width: 20%; font: 200% Segoe UI; margin-left: auto; margin-right: auto; transform: translateY(80%);
+                padding: 90px; line-height: 35px; border: dotted 5px black; width: 30%; font: 200% Segoe UI; margin-left: auto; margin-right: auto; transform: translateY(79%);
             }
             input[type=submit] {
                 width: 220px; height: 25px;

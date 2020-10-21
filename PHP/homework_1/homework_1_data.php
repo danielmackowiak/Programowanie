@@ -15,8 +15,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wynik</title>
+        <style>
+            body {
+                padding: 90px; line-height: 35px; border: dotted 5px black; width: 20%; font: 200% Segoe UI; margin-left: auto; margin-right: auto; transform: translateY(80%);
+            }
+            input[type=submit] {
+                width: 220px; height: 25px;
+            }
+        </style>
 </head>
 <body>
+<center>
     <?php
         $bokA = $_POST['bok_A'];
         $bokB = $_POST['bok_B'];
@@ -40,5 +49,6 @@
     <form name="form1" action="./homework_1_calc.php" method="post">
         <input type="submit" value="Pokaż obliczenia">
     </form>
+</center>
 </body>
 </html>

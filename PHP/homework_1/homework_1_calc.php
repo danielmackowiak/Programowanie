@@ -1,13 +1,13 @@
-<?php
-// Użytkownik podaje z klawiatury dwie długości do wyboru w polu radio ma pole i obwód domyślnie zaznaczone ma być 'pole'
-// Zabezpiecz formularz przed podaniem pustych danych
+<!-- 
+Użytkownik podaje z klawiatury dwie długości do wyboru w polu radio ma pole i obwód domyślnie zaznaczone ma być 'pole'
+Zabezpiecz formularz przed podaniem pustych danych
 
-// Wynik wyświetl w formacie:
-// Pole wynosi: 20cm2 (2 ma byc w indeksie górnym)
-// Obwód wynosi: 20cm
-// Dane wyślij z formularza bezpiecznie (POST)
-// Obliczenia mają być wyidoczne w innym pliku
-?>
+Wynik wyświetl w formacie:
+Pole wynosi: 20cm2 (2 ma byc w indeksie górnym)
+Obwód wynosi: 20cm
+Dane wyślij z formularza bezpiecznie (POST)
+Obliczenia mają być wyidoczne w innym pliku
+ -->
 
 <?php
     session_start();
@@ -33,9 +33,9 @@
         $obwod = $_SESSION['bokA'] + $_SESSION['bokB'];     
 
         if (!empty($_SESSION['bokA'])&& !empty($_SESSION['bokB'])&& $_SESSION['guzik'] == "p") {
-            echo "Pole: $_SESSION[bokA] x $_SESSION[bokB] = $pole cm<sup>2</sup>";
+            echo "Pole: $_SESSION[bokA] cm x $_SESSION[bokB] cm = $pole cm<sup>2</sup>";
         }elseif (!empty($_SESSION['bokA'])&& !empty($_SESSION['bokB'])&& $_SESSION['guzik'] == "o") {
-            echo "Obwód: $_SESSION[bokA] + $_SESSION[bokB] = $obwod cm";
+            echo "Obwód: $_SESSION[bokA] cm + $_SESSION[bokB] cm = $obwod cm";
         }else {
             ?>
             <script>

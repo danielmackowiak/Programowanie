@@ -40,7 +40,7 @@ Obliczenia mają być wyidoczne w innym pliku
         $_SESSION['guzik'] = "$guzik";
 
         $pole = $bokA * $bokB;
-        $obwod = $bokA + $bokB;
+        $obwod = 2 * $bokA + 2 * $bokB;
 
         if (!empty($_POST['bok_A'])&& !empty($_POST['bok_B'])&& $guzik == "p") {
             echo "Pole wynosi: $pole cm<sup>2</sup>";

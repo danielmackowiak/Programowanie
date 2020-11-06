@@ -21,7 +21,7 @@ Obliczenia mają być wyidoczne w innym pliku
     <title>Obliczenia</title>
         <style>
             body {
-                padding: 90px; line-height: 35px; border: groove 4px black; width: 30%; font: 200% Segoe UI; margin-left: auto; margin-right: auto; transform: translateY(93%); box-shadow: inset 0 0 0 15px lightblue;
+                padding: 90px; line-height: 35px; border: groove 4px black; width: 40%; font: 200% Segoe UI; margin-left: auto; margin-right: auto; transform: translateY(95%); box-shadow: inset 0 0 0 15px lightblue;
             }
         </style>
 </head>
@@ -30,12 +30,12 @@ Obliczenia mają być wyidoczne w innym pliku
     <?php
 
         $pole = $_SESSION['bokA'] * $_SESSION['bokB'];
-        $obwod = $_SESSION['bokA'] + $_SESSION['bokB'];     
+        $obwod = 2 *$_SESSION['bokA'] + 2 * $_SESSION['bokB'];     
 
         if (!empty($_SESSION['bokA'])&& !empty($_SESSION['bokB'])&& $_SESSION['guzik'] == "p") {
             echo "Pole: $_SESSION[bokA] cm x $_SESSION[bokB] cm = $pole cm<sup>2</sup>";
         }elseif (!empty($_SESSION['bokA'])&& !empty($_SESSION['bokB'])&& $_SESSION['guzik'] == "o") {
-            echo "Obwód: $_SESSION[bokA] cm + $_SESSION[bokB] cm = $obwod cm";
+            echo "Obwód: 2 x $_SESSION[bokA] cm + 2 x $_SESSION[bokB] cm = $obwod cm";
         }else {
             ?>
             <script>

@@ -31,28 +31,71 @@ Obliczenia mają być wyidoczne w innym pliku
 <body>
 <center>
     <?php
-        $bokA = $_POST['bok_A'];
-        $bokB = $_POST['bok_B'];
-        $guzik = $_POST['typ'];
 
-        $_SESSION['bokA'] = "$bokA";
-        $_SESSION['bokB'] = "$bokB";
-        $_SESSION['guzik'] = "$guzik";
+            if ($_POST['bok_A'] <= 0 || $_POST['bok_B'] <= 0) {
+                ?>
+                <script>
+                  history.back();
+                </script>
+                <?php
+            }else {
 
-        $pole = $bokA * $bokB;
-        $obwod = 2 * $bokA + 2 * $bokB;
+                $bokA = $_POST['bok_A'];
+                $bokB = $_POST['bok_B'];
+                $guzik = $_POST['typ'];
+        
+                $_SESSION['bokA'] = "$bokA";
+                $_SESSION['bokB'] = "$bokB";
+                $_SESSION['guzik'] = "$guzik";
+        
+                $pole = $bokA * $bokB;
+                $obwod = 2 * $bokA + 2 * $bokB;
+                    /*
+                    if (!empty($_POST['bok_A'])&& !empty($_POST['bok_B'])&& $guzik == "p") {
+                        echo "Pole wynosi: $pole cm<sup>2</sup>";
+                    }elseif (!empty($_POST['bok_A'])&& !empty($_POST['bok_B'])&& $guzik == "o") {
+                        echo "Obwód wynosi: $obwod cm";
+                    }else {
+                        ?>
+                        <script>
+                        history.back();
+                        </script>
+                        <?php
+                    }
+                    */
 
-        if (!empty($_POST['bok_A'])&& !empty($_POST['bok_B'])&& $guzik == "p") {
-            echo "Pole wynosi: $pole cm<sup>2</sup>";
-        }elseif (!empty($_POST['bok_A'])&& !empty($_POST['bok_B'])&& $guzik == "o") {
-            echo "Obwód wynosi: $obwod cm";
-        }else {
-            ?>
-            <script>
-              history.back();
-            </script>
-            <?php
-        }
+                //sprawdzić czy dane są wypełnione (bok_a oraz bok_B)
+                //w switchu sprawdzać opcje (p, o)
+                // $error, jeśli będzie błąd to wykonujemy history.back
+                
+                $error = 0;
+
+                if(!empty($_POST['bok_A'])&& !empty($_POST['bok_B'])) {
+                    switch ($_POST['typ']) {
+                        case 'p':
+                            echo "Pole wynosi: $pole cm<sup>2</sup>";
+                            break;
+
+                        case 'o':
+                            echo "Obwód wynosi: $obwod cm";
+                            break;
+
+                        default:
+                        $error = 1;
+                            break;
+                    }
+                }else{
+                    $error = 1;
+                }
+                if ($error == 1) {
+                    ?>
+                        <script>
+                        history.back();
+                        </script>
+                    <?php
+                }
+            }
+            
     ?>
     <form name="form1" action="./homework_1_calc.php" method="post">
         <input type="submit" value="Pokaż obliczenia">

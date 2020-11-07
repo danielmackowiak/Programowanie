@@ -43,7 +43,8 @@ Obliczenia mają być wyidoczne w innym pliku
             </script>
             <?php
         }
-    ?>
+    ?><br>
+    <a href="./homework_1.php">Powrót do obliczeń</a>
     </center>
 </body>
 </html>

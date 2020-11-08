@@ -15,11 +15,20 @@ na trzeciej stronie możliwość powrotu do strony pierwszej -->
 </head>
 <body>
   <?php
-    echo 'Twoje województwo: ';
+    $_SESSION['poz'] = $_POST['Poznań'];
+    $_SESSION['kal'] = $_POST['Kalisz'];
+    $_SESSION['kon'] = $_POST['Konin'];
+    $_SESSION['kra'] = $_POST['Kraków'];
+    $_SESSION['boc'] = $_POST['Bochnia'];
+    $_SESSION['brz'] = $_POST['Brzesko'];
+    $_SESSION['gda'] = $_POST['Gdańsk'];
+    $_SESSION['byt'] = $_POST['Bytów'];
+    $_SESSION['cho'] = $_POST['Chojnice'];
+/*     echo 'Twoje województwo: ';
     echo $_SESSION['wojewodztwo']; 
-    echo 'Twoje wybrane miasta: ';
-    echo $_SESSION['miasta1'];
-    
+    echo 'Twoje wybrane miasta: '; */
+    /* echo $_SESSION['miasto1']; */
   ?>
+  <a href="./8_sesje_1.php">Powrót do storny startowej</a>
 </body>
 </html>

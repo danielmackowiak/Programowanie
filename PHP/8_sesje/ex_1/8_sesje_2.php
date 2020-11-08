@@ -22,33 +22,33 @@ na trzeciej stronie możliwość powrotu do strony pierwszej -->
       case 'Wielkopolskie':
         ?>
         <label for="Poznań">Poznań</label>
-          <input type="checkbox" name="Poznań" id="miasta1">
+          <input type="checkbox" name="miasto1" value="Poznań">
         <label for="Kalisz">Kalisz</label>
-          <input type="checkbox" name="Kalisz" id="miasta1">
+          <input type="checkbox" name="miasto1" value="Kalisz">
         <label for="Konin">Konin</label>
-          <input type="checkbox" name="Konin" id="miasta1"><br><br>
+          <input type="checkbox" name="miasto1" value="Konin"><br><br>
         <?php
         break;
       
       case 'Małopolskie':
         ?>
         <label for="Kraków">Kraków</label>
-          <input type="checkbox" name="Kraków" id="miasta2">
+          <input type="checkbox" name="miasto2" value="Kraków">
         <label for="Bochnia">Bochnia</label>
-          <input type="checkbox" name="Bochnia" id="miasta2">
+          <input type="checkbox" name="miasto2" value="Bochnia">
         <label for="Brzesko">Brzesko</label>
-          <input type="checkbox" name="Brzesko" id="miasta2"><br><br>
+          <input type="checkbox" name="miasto2" value="Brzesko"><br><br>
         <?php
         break;
       
       case 'Pomorskie':
         ?>
         <label for="Gdańsk">Gdańsk</label>
-          <input type="checkbox" name="Gdańsk" id="miasta3">
+          <input type="checkbox" name="miasto3" value="Gdańsk">
         <label for="Bytów">Bytów</label>
-          <input type="checkbox" name="Bytów" id="miasta3">
-        <label for="Poznań">Poznań</label>
-          <input type="checkbox" name="Poznań" id="miasta3"><br><br>
+          <input type="checkbox" name="miasto3" value="Bytów">
+        <label for="Chojnice">Chojnice</label>
+          <input type="checkbox" name="miasto3" value="Chojnice"><br><br>
         <?php
         break;
       

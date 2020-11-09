@@ -17,5 +17,10 @@
   echo date("d-m-Y,l"), '<br><hr>';
 
   // 08 - Listopad - 2020, Niedziela
-  echo $data['mday']," - ", $data['month']," - ", $data['year'],", ", $data['weekday'];
+  $mday = $data['mday'];
+  $month = $data['month'];
+  $year = $data['year'];
+  $weekday = $data['weekday'];
+
+  echo $mday, " - ", $month, " - ", $year, ", ", $weekday;
 ?>

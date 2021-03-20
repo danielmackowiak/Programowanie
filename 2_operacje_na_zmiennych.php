@@ -1,98 +1,98 @@
-
 <?php
-    //wersja języka php
-    echo PHP_VERSION,'<hr>'; //7.4.10
+    //wersja php
+    echo PHP_VERSION; //7.4.10
 
-    //porównanie
-    $x = 20;
-    $y = 22;
+    //porownanie
+        $x = 20;
+        $y = 22;
 
-    if ($x == $y){
-        echo "$x jest równa $y";
-    }else{
-        echo "$x jest równa $y";
-    }
+        if ($x == $y) {
+            echo "<br>$x jest rowna $y";
+        }else {
+            echo "<br>$x nie jest równa $y<br>";
+        }
 
-    $x = 20;
-    $y = 22;
+        $x = 20;
+        $y = 20.0;
 
-    if ($x == $y){
-        echo "\$x jest równa \$y";
-    }else{
-        echo "\$x jest równa \$y";
-    }
-
-    echo gettype($x),'<br>'; //integer
-    echo gettype($y),'<br>'; //double
-    
-echo "<hr>";
+        if ($x === $y) {
+            echo "\$x jest równa \$y<br>";
+        }else {
+            echo"\$x nie jest rowna \$y <br>";
+        }
+        
+        echo gettype($x),'<br>'; //integer
+        echo gettype($y),'<br>'; //double
     //operator <=>
 
-    $x = 2;
-    $y = 20.0;
+        $x = 25;
+        $y = 25.0;
 
-    echo $x <=> $y;
+        echo $x <=> $y;
 
-    //SWITCH
-    echo "<hr>";
-
+    // SWITCH
+    
     $country = 'Polska';
     switch ($country) {
         case 'Polska':
             echo '<br>Pochodzisz z Polski';
-        break;
+            break;
         case 'Gruzja':
             echo '<br>Pochodzisz z Gruzji';
         break;
         default:
             echo '<br>Pochodzisz z innego kraju niż Polska lub Gruzja';
-    break;
+break;
     }
-
-
-
-//zadanie 1
-
-    $a = 7.5
-    $b = 10
+    echo'<hr>';
+/*  Dwie zmienne mają wartośći 7.5 oraz 10,
+    sprawdz ktora z nich jest wieksza i wyswietl na ekranie komunikat o tresci:
+    Zmienna A jest wieksza od zmiennej B lub zmienna B jest wieksza od zmiennej A
+    Jeśli zmiennne beda rowne to wyswietl komunikat o tresci:
+     Zmienna A i B jest równa 
+     Wykorzystaj operator <=>
+*/
+    // zadanie 
+    $a = 7.5;
+    $b = 10;
 
     switch ($a <=> $b) {
-        case '($b <=> $a)':
-            echo 'Zmienna A jest większa od zmiennej B';
+        case $b <= $a:
+            echo'<br><b>Zmienna A jest wieksza od zmiennej B<br>';
             break;
-        case '($a <=> $b)':
-            echo 'Zmienna B jest większa od zmiennej A';
+            
+        case $a <= $b;
+                echo'<br><b>Zmienna B jest wieksza od zmiennej A<br>';
             break;
         default:
-            # code...
-            break;
+            echo'<br><b>Zmienna A i B jest równa<br>';
+        break;
     }
+    // postinkrementacja $x++ => $x = $x + 1
+    // postdekrementacja $x-- => $x = $x-1
 
-// postinkrementacja $x++ => $x = $x + 1
-// postinkrementacja $x-- => $x = $x - 1
+    // preinkrementacja ++$x
+    // predekrementacja --$x
 
-// preinkrementacja ++$x
-// preinkrementacja --$x
+    $x = 10;
+    echo $x++; //10
+    echo $x; //11
+    echo ++$x; //12
+    echo --$x; //11
 
-$x= 10;
-echo $x++; //10
-echo $x; //11
-echo ++$x; //12
-echo "--$x<br>"; //11
+    $x=1;
+    echo $x; //1
+    $x=$x++; 
+    echo $x; //1
+    $x=++$x; 
+    echo $x; //2
+    $y=++$x; 
+    echo $x; //3
+    echo $y; //3
+    $y=$x++;
+    echo $x; //4
+    echo "$y<br>"; //3
+    
+    
+    ?>
 
-$x=1
-echo $x; //1
-$x=$x++;
-echo $x; //1
-$x=$x++;
-echo $x; //2
-$y=++$x;
-echo $x; //3
-echo $y; //3
-$y=$x++;
-echo &x; //4
-echo "$y<br>"; //3
-
-
-
-?>

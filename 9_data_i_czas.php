@@ -1,26 +1,29 @@
 <?php
 // funkcja Date()
- echo "Rok - miesiąc - dzień: ", date("Y-m-d"), '<br>'; // Rok - miesiąc - dzień: 2020-11-08
- echo "Rok - miesiąc - dzień: ", date("Y-M-d"), '<br>'; // Rok - miesiąc - dzień: 2020-Nov-08
- echo "Dzień - miesiąc - rok: ", date("d-m-Y"), '<br>'; // Dzień - miesiąc - rok: 08-11-2020
- echo date("G:i:s"), '<br>'; // 17:34:09
- echo date("h:i:sa"), '<br>'; // 05:34:09pm
- echo date("Y-m-d G:i:s"), '<br>'; // 2020-11-08 17:34:09
- echo date("w"), '<br>'; //0 - niedziela
+    echo "Rok - miesiąc - dzień: ", date("Y-m-d"),'<br>'; //2020-11-08
+    echo "Rok - miesiąc - dzień: ", date("Y-M-d"),'<br>'; //2020-Nov-08
+    echo "Rok - miesiąc - dzień: ", date("d-m-Y"),'<br>'; //08-11-2020
+    echo date("G:i:s"),'<br>'; //godz min sek
+    echo date("h:i:sa"),'<br>'; //godz min sek pm/am
+    echo date("Y-m-d G:i:s"),'<br>'; //rok msc d godz min sek
+    echo date("w"),'<br>'; //0 - niedziela
 
- // funkcja getdate()
-  $data = getdate();
+// $funcja getdate()
+    $data = getdate();
 
-  echo '<pre>' ,print_r($data), '</pre><hr>';
+    echo '<pre>',print_r($data),'</pre>';
 
-  // dzień - miesiąc - rok, dzień tygodnia
-  echo date("d-m-Y,l"), '<br><hr>';
+    //dzien - miesiac - rok, dzientygodnia
+    //08 - listopad - 2020, niedziela
 
-  // 08 - Listopad - 2020, Niedziela
-  $mday = $data['mday'];
-  $month = $data['month'];
-  $year = $data['year'];
-  $weekday = $data['weekday'];
+    echo $data['mday'], $data['mon'], $data['year'], $data['weekday'];     
+    
+    $mday = $data['mday'];
+    $mon = $data['mon'];
+    $year = $data['year'];
+    $weekday = $data['weekday'];
 
-  echo $mday, " - ", $month, " - ", $year, ", ", $weekday;
+    $result = $mday.' - '.$mon.' - '.$year.', '.$weekday;
+    echo $result
+    
 ?>

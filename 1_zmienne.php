@@ -1,31 +1,32 @@
 <?php
-    $name = 'Jan';
-    echo'Test';
-    echo'Test<br>';
-    echo 'Imie: $name<br>';
-    echo "Imie: $name<br>";
-    //konkatenacja
-    $name = 'Jan'.' Kowalski';
+$name = 'Jan';
+echo 'text';
+echo "text<br>";
+echo 'Imie: $name<br>';
+echo "Imie: $name<br>";
+
+//konkatencja
+$name = 'Jan'.'Kowalski';
     echo "Imie: $name<br>";
 
-    //dodawanie 
+//dodawanie
     $add = 2 + 3;
     echo "$add<br>";
 
-    //typy danych
-    //boolen
+//typy danych
+//boolean
 
-    $prawda = true;
-    echo $prawda; //wartość true to 1
-    
-    $fałsz = false;
-    echo "$fałsz<br>"; //false nic nie wyświetli
+$prawda = true;
+echo $prawda; //true wyswietli 1
 
-    //integer
+$fałsz = false;
+echo "$fałsz<br>"; // false nic nie wyswietli
+
+//integer
     $bin = 0b1101; //13
-    $oct = 01101;
-    $dec = 13;
-    $hex = 0xA1;
+    $oct = 01101; //577
+    $dec = 13; //13
+    $hex = 0xA1; //161
     echo "$bin<br>";
     echo "$oct<br>";
     echo "$dec<br>";
@@ -33,26 +34,40 @@
     //interpolacja
     echo $hex, '<hr>';
 
-    echo 'a'.'b'.'c'; //wolniejszy sposób a dodać b dodać c
-    echo 'a','b','c'; //wyświetl a wyświetl b wyświetl c
+    echo 'a'.'b'.'c'; //wolniejszy sposob od interpolacji
+    // a suma b suma c => wyswietli abc
+    echo 'a','b','c'; // => wyswietl a wyswietl b wyswietl c
 
-    //składnia heredoc
-
-    $name = "Daniel";
-    echo <<<LABEL
-        <br>Imię:$name
+//skladnia heredoc
+$name = "Anna";
+$surname = 'Kowalska';
+echo <<<LABEL
+    <br>Imię: $name<br>
+    Twoje dane: $name $surname
+    <hr>
 LABEL;
 
-    $imie = "Daniel";
-    $nazwisko = "Maćkowiak";
-    $miejscowosc = "Poznań";
-    $urodzenia = "Poznań";
-    echo <<<DANE
-        <br><br><hr>
-        <u>Dane użytkownika</u>
-        <br>Imię i Nazwisko: $imie $nazwisko
-        <br>Miejscowość: $miejscowosc
-        <br>Miejsce urodzenia: $urodzenia
+/*
+Nowy heredoc z etykieta DANE
+
+Dane uzytkownika (podkreslony tekst)
+Imie i nazwisko: ..... 
+Miejscowosc: ....
+Miejsce urodzenia: ... 
+
+*/
+
+ $name = 'Krystyna';
+ $surname = 'Nowak';
+ $city = 'Poznań';
+ $age = '34';
+ echo <<<DANE
+     <hr>
+    Dane użytkownika:<br>
+    Imie i nazwisko: $name $surname<br>
+    Miejscowość: $city<br>
+    Wiek: $age
 DANE;
 
 ?>
+ 

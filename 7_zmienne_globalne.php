@@ -1,101 +1,95 @@
 <?php
-  // zmienne globalne
+    // zmienne globalne
 
-  $global = 10;
-  /* echo $global; */
+    $global = 10;
+    // echo $global;
 
-  function show(){
-    // echo "Wartość \$global w funkcji: $global";
-    echo "Wartość \$global w funkcji: $GLOBALS[global]";
-    echo "Wartość \$global w funkcji:" {$GLOBALS['global']};
-    echo "Wartość \$global w funkcji:".$GLOBALS['global'];
-  }
+    function show(){
+        echo "Wartość \$global w funkcji: $GLOBALS[global]<br>";
+        echo "Wartość \$global w funkcji: {$GLOBALS['global']}<br>";
+        echo "Wartość \$global w funkcji: ".$GLOBALS['global'];
+    }
 
-  show();
+    show();
 
-   // zmienna lokalna
-   function number() {
-     $x = 10;
-     echo "Zmienna wynosi: $x";
-   }
+    //zmienna lokalna
+    function number(){
+        $x = 10;
+        echo "zmienna wynosi: $x<br>";
+    }
 
-   number();
-   // echo $x; //error
+    number();
+    // echo $x; //error
 
-   // zmienne statyczne
+    //zmienne statyczne
+    function add(){
+        $x = 4;
+        // $x = $x = 10;
+        $x += 10;
+        echo "\$x = $x";
+    }
 
-   function add() {
-     $x = 4;
-     // $x = $x + 10;
-     $x += 10;
-     echo "\$x = $x";
-   }
+    add(); //14
+    add(); //14
+    add(); //14
 
-   add(); //14
-   add(); //14
-   add(); //14
-   echo '<br>';
-   function add1() {
-    static $x = 4;
-    $x += 10;
-    echo "\$x = $x";
-  }
-  
-  add1(); //34
-  add1(); //34
-  add1(); //34
+    function add1(){
+        static $x = 4;
+        $x += 10;
+        echo "\$x = $x";
+    }
 
-  // przekazywanie argumentów
-  // przekazywanie argumentów przez wartość
+    add1(); //14
+    add1(); //24
+    add1(); //34
+    echo '<br>';
 
-  function addThree($x) {
-    $x += 3;
-  }
+    // przekazywanie argumentow
+    // przekazywanie argumentow przez wartosc
 
-  $number = 5;
+    function addThree($x){
+        $x += 3;
+    }
 
-  echo "<hr>\$number przed wywołaniem funkcji: $number<br>";
-  addThree($number);
-  echo "\$number przed wywołaniem funkcji: $number<hr>";
+    $number = 5;
 
-  // Utworzyć funkcję addFour, przekazywanie argumentów przez referencję
+    echo "\$number przed wywolaniem funkcji: $number<br>";
+    addThree($number);
+    echo "\$number po wywolaniem funkcji: $number<br>";
 
-  function addFour(&$x) {
-    $x += 5;
-  }
+    // utworzyc funkcje addFour, przekazywanie argumentow przez referencje
 
-  $number = 5;
+    function addFour(&$x){
+        $x += 4;
+    }
 
-  echo "\$number przed wywołaniem funkcji: $number<br>";//5
-  addFour($number);
-  echo "\$number przed wywołaniem funkcji: $number<hr>";//9
-  addFour($number);
-  echo "\$number przed wywołaniem funkcji: $number<hr>";//13
+    $number = 5;
 
-// argumenty domyślne
+    echo "\$number przed wywolaniem funkcji: $number<br>"; //5
+    addFour($number);
+    echo "\$number przed wywolaniu funkcji: $number<br>"; // 9
+    addFour($number);
+    echo "\$number przed wywolaniem funkcji: $number<br>"; //13
 
- function add2($x, $y = 5) {
-   return $x + $y;
- }
+    // argumenty domyslne
+    function add2($x,$y = 5){
+        return $x + $y;
+    }
 
- $a = 3;
- echo add2(2, 4); //6
- echo add2(10); //15
- echo add2($a, $a); //6
- echo add2($y = 10, $y = -1); //9
- 
+    $a = 3;
+    echo add2(2, 4); //6
+    echo add2(10); //15
+    echo add2($a, $a); //6
+    echo add2($y = 10, $x = -1); //9
 
-// argumenty i typy danych
+    //argumenty i typy danych
+    function multi(int $x, int $y = 5){
+        return $x * $y;
+    }
 
- function multi(int $x, int $y = 5) {
-   return $x * $y;
- }
-
- echo multi(1); //5
- echo multi(3, 5); //15
- echo multi(3.5, 5); //15
-
-
+    echo multi(1); //5
+    echo multi(3, 5); //15
+    echo multi(3.5, 5); //15
 
 
 ?>

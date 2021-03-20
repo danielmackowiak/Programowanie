@@ -1,79 +1,84 @@
 <?php
-    echo <<<T
-    Teb - kurs
-    Programowania
+    $text = <<<T
+    Teb - kurs programowania<br>
 T;
 
     echo "$text<br>";
     echo nl2br($text);
 
-    $name = 'jANUsZ';
+    $name = 'jANusZ';
     echo "$name<br>";
 
-//zamiana na małe litery
-echo strtolower($name),'<br>';
 
-//zamiana na duże litery
-echo strtoupper($name),'<br>';
 
-//zamiana pierwszej litery na duża a pozostałych na małe
-echo ucfirst(strtolower($name)), '<br>';
+// zamaiana na male litery
+    echo strtolower($name),'<br>';
 
-    $name = "jANUsz kowALski";
-    echo ucfirst(strtolower($name)), '<br>';
+// zamaiana na duze litery
+    echo strtoupper($name),'<br>';
+
+// zamaiana pierwszej litery na duza a pozostaych na male
+    echo ucfirst(strtolower($name)),'<br>';
+
+    $name = "jAnUSz kOwAlSKi";
+    echo ucwords(strtolower($name)),'<br>';
 
 // LOREM IPSUM
-$lorem = <<<LOREM;
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, numquam delectus tempore amet beatae id quaerat soluta assumenda alias ducimus eligendi dolorem totam debitis quas aperiam consequuntur? Totam, dolor repellendus. <br>
+    $lorem = <<<LOREM
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at quam in nunc dapibus ultrices ut non ipsum. Vestibulum malesuada nisl quis mauris pharetra, vitae eleifend arcu aliquet. Etiam venenatis quis tellus quis varius. Nam sit amet mi vulputate, ultrices tellus non, rhoncus dui. Phasellus bibendum iaculis malesuada. Nullam dapibus metus dui, non euismod metus ultrices sed. Nullam at felis vitae dui facilisis luctus. Sed dignissim felis magna, eget iaculis dolor sodales id. Integer ornare velit lobortis ante dictum consectetur. Integer sed risus est. Nullam ut fringilla erat, ac egestas neque. Integer tristique lacus eget nibh luctus viverra. Mauris convallis augue id felis mattis eleifend.<br>
 LOREM;
 
-    echo $lorem;
+    echo $lorem,'<br>';
     echo wordwrap($lorem, 40, '<br>');
     echo wordwrap($lorem, 40, '<hr>');
 
-// czyszczenie zawartości bufora
+
+// czyszczenie zawartosci bufora
     ob_clean();
 
-// białe znaki
+//białe znaki
     $name = 'Anna';
-    $name1 = '  Anna  ';
+    $name1 = '  Anna   ';
 
-    echo 'Długość $name: ' ,strlen($name);
-    echo '<br>Długość $name1: ' ,strlen($name1);
+    echo 'Długość $name: ', strlen($name);
+    echo '<br>Długość $name1: ', strlen($name1);
 
-// wyczyść zmienną $name1 z białch znaków
+//wyczysc zmienna $name1 z bialych znaków
+    
+echo strlen(ltrim($name1)); //5
+echo strlen(rtrim($name1)); //6
+echo strlen(trim($name1)),'<hr>'; //4
 
-    echo lenstr(ltrim($name1)); //5
-    echo lenstr(rtrim($name1)); //6
-    echo lenstr(trim($name1)); //4
+//przeszukiwanie ciagów znaków
+    $address = 'Poznań, ul. Rynek Jeżycki 1, tel .(61) 123-45-67';
+    echo $search = strstr($address, 'tel'),'<br>'; 
+    
+    $address = 'Poznań, ul. Rynek Jeżycki 1, tel .(61) 123-45-67';
+    echo $search = strstr($address, 'tel', true),'<br>';
+    
+    $address = 'Poznań, ul. Rynek Jeżycki 1, tel .(61) 123-45-67';
+    echo $search = stristr($address, 'tel',),'<br>';
 
-// przeszukiwanie ciągów znaków
-    $address = 'Poznań, ul. Rynek Jeżycki 1, tel. (61) 123-45-67';
-    echo strstr($address, 'tel');
-
-    $address = 'Poznań, ul. Rynek Jeżycki 1, tel. (61) 123-45-67';
-    echo strstr($address, 'tel' true), '<br>';
-
-    $address = 'Poznań, ul. Rynek Jeżycki 1, tel. (61) 123-45-67';
-    echo strstr($address, 'Tel'), '<br>';
-
-    $mail = strstr('janusz@gmail.com', "@");
+    $mail = strstr('janusz@gmail.com', '@');
     echo "$mail<br>";
 
-    $mail = strstr('janusz@gmail.com', '64');
+    $mail = strstr('janusz@gmail.com', 64);
     echo "$mail<br>";
 
-// substr
+//substr
     echo substr('Janusz Kowalski', 7, 5);
     echo strlen(substr('Janusz Kowalski', 7, 5));
-    ob_clean();
+    //ob_clean();
 
-// zmiana ciągów
-    $replace = str_replace('%korona%','grypa', '%korona% jest niebezpieczna');
+//zamiana ciągów
+    $replace = str_replace('%korona%', 'grypa', '%korona% jest niebezpieczna');
     echo $replace,'<br>';
 
-// usuń z loginu polskie znaki
+//usuń z loginu polskie znaki
     $login = 'bączek';
-    $censure = array('ą', 'ę', ...)
-
+    $censure = array('ą','ę','ń','ś','ł','ó','ć','ż');
+    $replace = array('a','e','n','s','l','o','c','z');
+    echo str_replace($censure,$replace,$login);
+    // Janowe pozdrowienia!!!
+    // Jan coś pisze!!!!
 ?>

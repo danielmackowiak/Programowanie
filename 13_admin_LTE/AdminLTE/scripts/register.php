@@ -98,7 +98,7 @@
                         $sql = "INSERT INTO `customer_marketing` (`customers_id`, `marketing_id`) VALUES (?,?)";
                         
                         $stmt = $connect->prepare($sql);
-                        $stmt->bind_param("ss", $user_id, $value);
+                        $stmt->bind_param("s", $user_id);
                         $stmt->execute();
                     }
                 }

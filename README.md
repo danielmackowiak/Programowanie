@@ -1,1 +1,2 @@
-# Programowanie
+# git
+zajecia

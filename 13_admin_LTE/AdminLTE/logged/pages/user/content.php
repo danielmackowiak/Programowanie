@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +10,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-  <!-- fullCalendar -->
-  <link rel="stylesheet" href="../plugins/fullcalendar/main.css">
+  <!-- calendar -->
+  <link rel="stylesheet" href="../plugins/calendar/main.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
@@ -23,11 +24,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Calendar</h1>
+            <h1>Profil użytkownika</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
-              <li class="breadcrumb-item active">Calendar</li>
+              <li class="breadcrumb-item active">Kalendarz</li>
             </ol>
           </div>
         </div>
@@ -41,53 +42,102 @@
           <div class="col-md-3">
             <div class="sticky-top mb-3">
               <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">Draggable Events</h4>
-                </div>
                 <div class="card-body">
-                  <!-- the events -->
-                  <div id="external-events">
-                    <div class="external-event bg-success">Lunch</div>
-                    <div class="external-event bg-warning">Go home</div>
-                    <div class="external-event bg-info">Do homework</div>
-                    <div class="external-event bg-primary">Work on UI design</div>
-                    <div class="external-event bg-danger">Sleep tight</div>
-                    <div class="checkbox">
-                      <label for="drop-remove">
-                        <input type="checkbox" id="drop-remove">
-                        remove after drop
-                      </label>
-                    </div>
-                  </div>
+
+                <!-- pobieranie danych z db -->
+              <?php
+                // $_SESSION['logged']['id'];
+
+                require_once '../scripts/connect.php';
+                $sql = "SELECT cu.nationality_id FROM customers cu";
+                $result = $connect->query($sql);
+                $customer = $result->fetch_assoc()
+              ?>
+
+        <!-- 1 -->
+          <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="../dist/img/user4-128x128.jpg"
+                       alt="User profile picture">
+                </div>
+
+                <h3 class="profile-username text-center">Nina Mcintire</h3>
+
+                <p class="text-muted text-center">Software Engineer</p>
+
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li class="list-group-item">
+                    <b>Followers</b> <a class="float-right">1,322</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Following</b> <a class="float-right">543</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Friends</b> <a class="float-right">13,287</a>
+                  </li>
+                </ul>
+                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          <!-- 1 -->
+
+
+                  <div id="external-events"></div>
+                  
                 </div>
                 <!-- /.card-body -->
+                
               </div>
               <!-- /.card -->
               <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Create Event</h3>
-                </div>
-                <div class="card-body">
-                  <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
-                    <ul class="fc-color-picker" id="color-chooser">
-                      <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
-                      <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
-                      <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
-                      <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
-                      <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
-                    </ul>
-                  </div>
-                  <!-- /btn-group -->
-                  <div class="input-group">
-                    <input id="new-event" type="text" class="form-control" placeholder="Event Title">
 
-                    <div class="input-group-append">
-                      <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
-                    </div>
-                    <!-- /btn-group -->
-                  </div>
-                  <!-- /input-group -->
-                </div>
+
+        <!-- 2 -->
+          <!-- About me -->
+          <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">About Me</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <strong><i class="fas fa-book mr-1"></i> Education</strong>
+
+                <p class="text-muted">
+                  B.S. in Computer Science from the University of Tennessee at Knoxville
+                </p>
+                <hr>
+                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+                <p class="text-muted">
+                  <?php
+                    echo <<<LOCATION
+                      $customer
+
+                  LOCATION;
+                  ?>
+                </p>
+                <hr>
+                <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+                <p class="text-muted">
+                  <span class="tag tag-danger">UI Design</span>
+                  <span class="tag tag-success">Coding</span>
+                  <span class="tag tag-info">Javascript</span>
+                  <span class="tag tag-warning">PHP</span>
+                  <span class="tag tag-primary">Node.js</span>
+                </p>
+                <hr>
+                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          <!-- 2 -->
+
+
               </div>
             </div>
           </div>
@@ -97,8 +147,10 @@
               <div class="card-body p-0">
                 <!-- THE CALENDAR -->
                 <div id="calendar"></div>
+                
               </div>
               <!-- /.card-body -->
+              
             </div>
             <!-- /.card -->
           </div>
@@ -118,9 +170,9 @@
 <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
-<!-- fullCalendar 2.2.5 -->
+<!-- calendar 2.2.5 -->
 <script src="../plugins/moment/moment.min.js"></script>
-<script src="../plugins/fullcalendar/main.js"></script>
+<script src="../plugins/calendar/main.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
 <!-- Page specific script -->
@@ -132,7 +184,7 @@
     function ini_events(ele) {
       ele.each(function () {
 
-        // create an Event Object (https://fullcalendar.io/docs/event-object)
+        // create an Event Object (https://calendar.io/docs/event-object)
         // it doesn't need to have a start or end
         var eventObject = {
           title: $.trim($(this).text()) // use the element's text as the event title
@@ -161,8 +213,8 @@
         m    = date.getMonth(),
         y    = date.getFullYear()
 
-    var Calendar = FullCalendar.Calendar;
-    var Draggable = FullCalendar.Draggable;
+    var Calendar = calendar.Calendar;
+    var Draggable = calendar.Draggable;
 
     var containerEl = document.getElementById('external-events');
     var checkbox = document.getElementById('drop-remove');
@@ -248,9 +300,9 @@
         }
       }
     });
-
+ 
     calendar.render();
-    // $('#calendar').fullCalendar()
+    // $('#calendar').calendar()
 
     /* ADDING EVENTS */
     var currColor = '#3c8dbc' //Red by default

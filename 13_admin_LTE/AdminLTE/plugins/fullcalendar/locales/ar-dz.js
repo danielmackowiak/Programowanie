@@ -1,4 +1,4 @@
-FullCalendar.globalLocales.push(function () {
+calendar.globalLocales.push(function () {
   'use strict';
 
   var arDz = {

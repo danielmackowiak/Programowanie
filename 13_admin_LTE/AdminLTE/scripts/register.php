@@ -80,9 +80,9 @@
         */
 
         //new 
-        $sql = "INSERT INTO `customers` (`cities_id`, `nationality_id`, `name`, `surname`, `gender`,  `email`, `pass`, `birthday`, `avatar`) VALUES (?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO `customers` (`cities_id`, `country_id`, `name`, `surname`, `gender`,  `email`, `pass`, `birthday`, `avatar`) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $connect->prepare($sql);
-        $stmt->bind_param("sssssssss", $city, $nationality, $name, $surname, $gender, $email, $pass, $birthday, $avatar);
+        $stmt->bind_param("sssssssss", $city, $country, $name, $surname, $gender, $email, $pass, $birthday, $avatar);
         
         if ($stmt->execute()) {
             //header("location: ../index.php?register=success&email=$email");

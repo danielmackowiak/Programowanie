@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-  <!-- fullCalendar -->
-  <link rel="stylesheet" href="../plugins/fullcalendar/main.css">
+  <!-- calendar -->
+  <link rel="stylesheet" href="../plugins/calendar/main.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
@@ -938,9 +938,9 @@
 <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
-<!-- fullCalendar 2.2.5 -->
+<!-- calendar 2.2.5 -->
 <script src="../plugins/moment/moment.min.js"></script>
-<script src="../plugins/fullcalendar/main.js"></script>
+<script src="../plugins/calendar/main.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
 <!-- Page specific script -->
@@ -952,7 +952,7 @@
     function ini_events(ele) {
       ele.each(function () {
 
-        // create an Event Object (https://fullcalendar.io/docs/event-object)
+        // create an Event Object (https://calendar.io/docs/event-object)
         // it doesn't need to have a start or end
         var eventObject = {
           title: $.trim($(this).text()) // use the element's text as the event title
@@ -981,8 +981,8 @@
         m    = date.getMonth(),
         y    = date.getFullYear()
 
-    var Calendar = FullCalendar.Calendar;
-    var Draggable = FullCalendar.Draggable;
+    var Calendar = calendar.Calendar;
+    var Draggable = calendar.Draggable;
 
     var containerEl = document.getElementById('external-events');
     var checkbox = document.getElementById('drop-remove');
@@ -1070,7 +1070,7 @@
     });
 
     calendar.render();
-    // $('#calendar').fullCalendar()
+    // $('#calendar').calendar()
 
     /* ADDING EVENTS */
     var currColor = '#3c8dbc' //Red by default

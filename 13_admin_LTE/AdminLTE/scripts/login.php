@@ -27,12 +27,7 @@ session_start();
     $sql = "SELECT email, pass, name, surname, permission_id, avatar FROM `customers` WHERE `email`=?";
     $stmt = $connect->prepare($sql);
     $stmt->bind_param("s", $email);
-    
-    
-    // $result = $stmt->get_result();
-    //$customer = $result->fetch_assoc();
-
-    
+    $result = $stmt->get_result();
     
 
     if ($result = $stmt->execute()){

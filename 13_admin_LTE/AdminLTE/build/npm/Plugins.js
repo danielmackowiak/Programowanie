@@ -270,10 +270,10 @@ const Plugins = [
     to: 'plugins/datatables-select/css'
   },
 
-  // Fullcalendar
+  // calendar
   {
-    from: 'node_modules/fullcalendar/',
-    to: 'plugins/fullcalendar'
+    from: 'node_modules/calendar/',
+    to: 'plugins/calendar'
   },
   // icheck bootstrap
   {

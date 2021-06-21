@@ -1,2 +1,3 @@
-# git
-Pliki z nauki Programowania aplikacji internetowych i mobilnych
+# kurs-programowanie
+Pliki z kursu Programowania aplikacji internetowych i mobilnych.
+PHP / Javascript / HTML / CSS / SQL
